@@ -1,3 +1,3 @@
 # analise_genoma
-# trẽs arquivos necessários
+# três arquivos necessários
 #autoAnalise é o principal
