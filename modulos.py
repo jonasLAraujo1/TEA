@@ -1,28 +1,30 @@
 # -*- coding: utf-8 -*-
 def enviar_email(texto,destinatario):
   import smtplib
+  from  time import sleep as pausa
   remetente    = 'servidor.ssh.remoto@gmail.com'
   senha        = 'Servidor23135'
-
-  #destinatario = ['jonasaraujo23137@gmail.com']
-  assunto      = 'Servidor Remoto Paula'
- 
-  msg = '\r\n'.join([
+  if destinatario!="null":
+    #destinatario = ['jonasaraujo23137@gmail.com']
+    assunto      = 'Servidor Remoto Paula'
+    msg = '\r\n'.join([
     'From: %s' % remetente,
     'To: %s' % destinatario,
     'Subject: %s' % assunto,
     '',
     '%s' % texto])
-  # Enviando o email
-  try:
-  	server = smtplib.SMTP('smtp.gmail.com:587')
-  	server.starttls()
-  	server.login(remetente,senha)
-  	server.sendmail(remetente, destinatario, msg)
-  	server.quit()
-
-  except:
-  	print('')
+    # Enviando o email
+    
+    while True:
+      try:
+        server = smtplib.SMTP('smtp.gmail.com:587')
+        server.starttls()
+        server.login(remetente,senha)
+        server.sendmail(remetente, destinatario, msg)
+        server.quit()
+        break
+      except:
+        pausa(10)
 
 def organizar_contagem():
   from os import remove
@@ -398,7 +400,7 @@ def criar_txt2(dicionario,nome_arquivo='saida'):
 	arquivo.close()
 
 # ler_index()
-def config():
-    arq=open("configuracao.conf",'r')
-    return arq.readlines()
+#def config():
+#    arq=open("configuracao.conf",'r')
+#    return arq.readlines()
     
