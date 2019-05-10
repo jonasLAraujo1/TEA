@@ -1,3 +1,5 @@
 # analise_genoma
-# três arquivos necessários
-#autoAnalise é o principal
+# Python 3x
+# ======== Forma de Uso ========
+# python3 [programa] [genoma]
+# primeiro chama-se o interpretador
