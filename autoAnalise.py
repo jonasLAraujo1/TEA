@@ -43,7 +43,7 @@ if (opcao == 'n' or opcao ==  'N'):
 		*nota01 parametros[0] é a primeira linha do arquivo configuracao.conf 
 		 que contem o caminho do RepeatMasker
 		 *nota02 parametros[1] é a seginda linha do arquivo configuracao.conf 
-		 que contem o Email que vai ser enviado os alertas""""
+		 que contem o Email que vai ser enviado os alertas """
 	
 	try:
 		system(parametros[0]" "+ numero_proc+" -s "+genoma) # *nota01
@@ -58,7 +58,7 @@ if (opcao == 'n' or opcao ==  'N'):
 	modulos.criar_txt2(estrutura,saida) # cria o arquivo de saida com os dados
 
 elif(opcao == 's' or opcao ==  'S'):
-	""" Faz os processos de estruturação dos dados caso já exista um arquivo tabular(Por escolha do Usuário) """"
+	""" Faz os processos de estruturação dos dados caso já exista um arquivo tabular(Por escolha do Usuário) """
 	system("awk '{ print $10, $11 }' "+saida+".tab > "+saida+"colunasDuplas.tab")
 	estrutura=modulos.indexar_contar(saida+"colunasDuplas.tab")
 	modulos.criar_txt2(estrutura,saida ) 
