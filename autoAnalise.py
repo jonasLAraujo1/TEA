@@ -47,9 +47,12 @@ if (opcao == 'n' or opcao ==  'N'):
 	
 	try:
 		system(parametros[0]+" "+ numero_proc+" -s "+genoma) # *nota01
-		system("awk -v OFS='\t' '$1=$1' "+genoma+".out > "+saida+".tab") # transforma a saída em um arquivo tabular
-		system("awk '{ print $10, $11 }' "+saida+".tab > "+saida+"colunasDuplas.tab") # cria um arquivo coma as colunas 10 e 11 da saída
-		modulos.enviar_email("Analise Finalizada",parametros[1]) # *nota 02
+		if(os.path.exists('./'+genoma+".out")):
+			system("awk -v OFS='\t' '$1=$1' "+genoma+".out > "+saida+".tab") # transforma a saída em um arquivo tabular
+			system("awk '{ print $10, $11 }' "+saida+".tab > "+saida+"colunasDuplas.tab") # cria um arquivo coma as colunas 10 e 11 da saída
+			modulos.enviar_email("Analise Finalizada",parametros[1]) # *nota 02
+		else:
+			exit()
 	except:
 		print(VERMELHO+"ERRO Na Analise do Arquivo: "+genoma+NORMAL) # mensagem de erro na tela	
 		modulos.enviar_email("ERRO na Analise do Arquivo: "+genoma,parametros[1]) # mensagem de erro no email
@@ -69,9 +72,12 @@ else:
 	numero_proc= input("Digite o Numero de Processadores que Será Usado;\n")
 	try:
 		system(parametros[0]+" "+ numero_proc+" -s "+genoma)
-		system("awk -v OFS='\t' '$1=$1' "+genoma+".out > "+saida+".tab")
-		system("awk '{ print $10, $11 }' "+saida+".tab > "+saida+"colunasDuplas.tab")
-		modulos.enviar_email("Analise Finalizada",parametros[1])
+		if(os.path.exists('./'+genoma+".out")):
+			system("awk -v OFS='\t' '$1=$1' "+genoma+".out > "+saida+".tab") # transforma a saída em um arquivo tabular
+			system("awk '{ print $10, $11 }' "+saida+".tab > "+saida+"colunasDuplas.tab") # cria um arquivo coma as colunas 10 e 11 da saída
+			modulos.enviar_email("Analise Finalizada",parametros[1]) # *nota 02
+		else:
+			exit()
 	except:
 		print(VERMELHO+"ERRO Na Analise do Arquivo: "+genoma+NORMAL)	
 		modulos.enviar_email("ERRO na Analise do Arquivo: "+genoma,parametros[1])
