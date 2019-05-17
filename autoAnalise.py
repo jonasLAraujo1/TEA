@@ -10,7 +10,7 @@ VERMELHO   = "\033[1;31m"
 NORMAL = "\033[0;0m"
 
 # carrega as configurações
-config=open("configuracao.conf",'r')
+config=open("./configuracao.conf",'r')
 parametros=config.readlines()
 
 #inicia o arquivo de logs
