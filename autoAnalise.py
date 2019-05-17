@@ -11,7 +11,7 @@ NORMAL = "\033[0;0m"
 
 # carrega as configurações
 
-parametros=modulos.lerconfig()
+parametros=modulos.config()
 
 #inicia o arquivo de logs
 arquivo=open("./log",'a')
