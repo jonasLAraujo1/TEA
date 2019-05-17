@@ -11,7 +11,7 @@ NORMAL = "\033[0;0m"
 
 # carrega as configurações
 
-parametros=["/usr/local/RepeatMasker/RepeatMasker -dir . -species Human -e rmblast -pa","null"]
+parametros=["/usr/local/RepeatMasker/RepeatMasker -dir . -species Human -e rmblast-2.9.0 -pa","null"]
 
 #inicia o arquivo de logs
 arquivo=open("./log",'a')
