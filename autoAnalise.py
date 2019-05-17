@@ -54,8 +54,9 @@ if (opcao == 'n' or opcao ==  'N'):
 		print(VERMELHO+"ERRO Na Analise do Arquivo: "+genoma+NORMAL) # mensagem de erro na tela	
 		modulos.enviar_email("ERRO na Analise do Arquivo: "+genoma,parametros[1]) # mensagem de erro no email
 		exit() # é pra fechar o programa
-	estrutura=modulos.indexar_contar(saida+"colunasDuplas.tab") # faz a contagem e pré-estrutura os dados
-	modulos.criar_txt2(estrutura,saida) # cria o arquivo de saida com os dados
+	else:
+		estrutura=modulos.indexar_contar(saida+"colunasDuplas.tab") # faz a contagem e pré-estrutura os dados
+		modulos.criar_txt2(estrutura,saida) # cria o arquivo de saida com os dados
 
 elif(opcao == 's' or opcao ==  'S'):
 	""" Faz os processos de estruturação dos dados caso já exista um arquivo tabular(Por escolha do Usuário) """
@@ -75,9 +76,9 @@ else:
 		print(VERMELHO+"ERRO Na Analise do Arquivo: "+genoma+NORMAL)	
 		modulos.enviar_email("ERRO na Analise do Arquivo: "+genoma,parametros[1])
 		exit()
-	
-	estrutura=modulos.indexar_contar(saida+"colunasDuplas.tab")
-	modulos.criar_txt2(estrutura,saida)
+	else:
+		estrutura=modulos.indexar_contar(saida+"colunasDuplas.tab")
+		modulos.criar_txt2(estrutura,saida)
 
 
 horario=datetime.now().strftime('%d/%m/%y   %H:%M') # Pega a hora do fim dos processos
