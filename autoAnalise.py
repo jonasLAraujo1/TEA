@@ -20,7 +20,9 @@ horario=datetime.now().strftime('%d/%m/%y   %H:%M')
 arquivo.write('Inicio: '+horario+'\n') # grava a hora de inicio da Análise no log
 
 genoma= sys.argv[1] #pega o nome do arquivo pasado como segundo argumento
-
+caminlho=sys.argv[0]
+caminho=caminho.replace("/autoAnalise.py","/")
+config=(open(caminho+"configuracao.confg"))
 # faz a verificação do tipo de arquivo que será análisado(fasta ou fna)
 if genoma[-3]=="f":
 	saida=genoma.replace('.fna','')
