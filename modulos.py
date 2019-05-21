@@ -1,9 +1,8 @@
 # -*- coding: utf-8 -*-
-def enviar_email(texto,destinatario):
+def enviar_email(destinatario,remetente,senha,texto):
   import smtplib
   from  time import sleep as pausa
-  remetente    = 'servidor.ssh.remoto@gmail.com'
-  senha        = 'Servidor23135'
+  
   if destinatario!="null":
     #destinatario = ['jonasaraujo23137@gmail.com']
     assunto      = 'Servidor Remoto Paula'
