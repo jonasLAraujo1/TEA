@@ -400,7 +400,7 @@ def criar_txt2(dicionario,nome_arquivo='saida'):
 	arquivo.close()
 
 # ler_index()
-def config():
-    arq=open("configuracao.conf",'r')
+def config(caminho):
+    arq=open(caminho+"/configuracao.conf",'r')
     return arq.readlines()
     
