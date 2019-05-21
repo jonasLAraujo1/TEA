@@ -6,7 +6,7 @@
  * modulos.py
  * configuracao.conf
 ## Sintaxe de Uso 
-* python3 [arg1]  [arg2]
+``` python3 [arg1]  [arg2] ```
 ### arg1] = autoAnalise.py  
 ### [arg2] = arquivo.fna ou arquivo.fasta
 #
@@ -16,4 +16,5 @@
 #
 ## Exemplo 02
 ####  Programa em diretório diferente nesse caso deve-se passar o diretório absoluto do programa
-* python3 /home/analise_genoma/autoanalise.py teste.fasta
+``` python3 /home/analise_genoma/autoanalise.py teste.fasta ```
+ 
