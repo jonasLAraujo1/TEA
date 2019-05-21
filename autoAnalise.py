@@ -10,19 +10,20 @@ VERMELHO   = "\033[1;31m"
 NORMAL = "\033[0;0m"
 
 # carrega as configurações
-
-parametros=["/usr/local/RepeatMasker/RepeatMasker -dir . -species Human -e rmblast -pa","null"]
+#configuração do RepeatMasker
+parametros=["/usr/local/RepeatMasker/RepeatMasker -dir . -species Human -e rmblast -pa","null"] 
 
 #inicia o arquivo de logs
 arquivo=open("./log",'a')
-
 horario=datetime.now().strftime('%d/%m/%y   %H:%M')
 arquivo.write('Inicio: '+horario+'\n') # grava a hora de inicio da Análise no log
 
 genoma= sys.argv[1] #pega o nome do arquivo pasado como segundo argumento
+
 caminlho=sys.argv[0]
 caminho=caminho.replace("/autoAnalise.py","/")
-config=(open(caminho+"configuracao.confg"))
+config=(open(caminho+"configuracao.conf"))
+
 # faz a verificação do tipo de arquivo que será análisado(fasta ou fna)
 if genoma[-3]=="f":
 	saida=genoma.replace('.fna','')
