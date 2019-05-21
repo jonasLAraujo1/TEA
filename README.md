@@ -1,5 +1,8 @@
-# Python 3x 
-# analise_genoma
+## Dependências 
+* Python 3x
+* RepeatMasker
+## Arquivos
+ * analise_genoma
 # 
 # ======== Forma de Uso ========
 # python3 [arg1]  [arg2]
