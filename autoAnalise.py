@@ -53,12 +53,12 @@ if (opcao == 'n' or opcao ==  'N'):
 		if(os.path.exists('./'+genoma+".out")):
 			system("awk -v OFS='\t' '$1=$1' "+genoma+".out > "+saida+".tab") # transforma a saída em um arquivo tabular
 			system("awk '{ print $10, $11 }' "+saida+".tab > "+saida+"colunasDuplas.tab") # cria um arquivo coma as colunas 10 e 11 da saída
-			modulos.enviar_email("Analise Finalizada",parametros[1]) # *nota 02
+			#modulos.enviar_email("Analise Finalizada",parametros[1]) # *nota 02
 		else:
 			exit()
 	except:
 		print(VERMELHO+"ERRO Na Analise do Arquivo: "+genoma+NORMAL) # mensagem de erro na tela	
-		modulos.enviar_email("ERRO na Analise do Arquivo: "+genoma,parametros[1]) # mensagem de erro no email
+		#modulos.enviar_email("ERRO na Analise do Arquivo: "+genoma,parametros[1]) # mensagem de erro no email
 		exit() # é pra fechar o programa
 	else:
 		estrutura=modulos.indexar_contar(saida+"colunasDuplas.tab") # faz a contagem e pré-estrutura os dados
@@ -78,12 +78,12 @@ else:
 		if(os.path.exists('./'+genoma+".out")):
 			system("awk -v OFS='\t' '$1=$1' "+genoma+".out > "+saida+".tab") # transforma a saída em um arquivo tabular
 			system("awk '{ print $10, $11 }' "+saida+".tab > "+saida+"colunasDuplas.tab") # cria um arquivo coma as colunas 10 e 11 da saída
-			modulos.enviar_email("Analise Finalizada",parametros[1]) # *nota 02
+			#modulos.enviar_email("Analise Finalizada",parametros[1]) # *nota 02
 		else:
 			exit()
 	except:
 		print(VERMELHO+"ERRO Na Analise do Arquivo: "+genoma+NORMAL)	
-		modulos.enviar_email("ERRO na Analise do Arquivo: "+genoma,parametros[1])
+		#modulos.enviar_email("ERRO na Analise do Arquivo: "+genoma,parametros[1])
 		exit()
 	else:
 		estrutura=modulos.indexar_contar(saida+"colunasDuplas.tab")
