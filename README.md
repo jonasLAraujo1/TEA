@@ -7,7 +7,7 @@
  * configuracao.conf
 ## Sintaxe de Uso 
 ``` python3 [arg1]  [arg2] ```
-### arg1] = autoAnalise.py  
+### arg1] = main.py  
 ### [arg2] = arquivo.fna ou arquivo.fasta
 #
 ## Exemplo 01 
