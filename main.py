@@ -11,7 +11,7 @@ NORMAL = "\033[0;0m"
 
 # carrega as configurações
 #configuração do RepeatMasker
-parametros=["/usr/local/RepeatMasker/RepeatMasker -dir . -species Human -e rmblast -pa","null"] 
+#parametros=["/usr/local/RepeatMasker/RepeatMasker -dir . -species Human -e rmblast -pa","null"] 
 
 #inicia o arquivo de logs
 arquivo=open("./log",'a')
@@ -23,6 +23,7 @@ genoma= sys.argv[1] #pega o nome do arquivo pasado como segundo argumento
 caminlho=sys.argv[0]
 caminho=caminho.replace("/autoAnalise.py","/")
 config=(open(caminho+"configuracao.conf"))
+parametros=config.readlines()
 
 # faz a verificação do tipo de arquivo que será análisado(fasta ou fna)
 if genoma[-3]=="f":
