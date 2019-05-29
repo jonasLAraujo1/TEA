@@ -13,11 +13,18 @@ else:
 	print("opção Inválida")
 	print("Ignorando...")
 	emailPessoal='null'
+remove=input("remover arquivos residuais no fim \n S ou N?")
+if remove=='S' or remove=='s':
+	remover=True
+else:
+	remover=False
+
 arquivo=open("./configuracao_local.conf","w")
 arquivo.write("/usr/local/RepeatMasker/RepeatMasker -dir . -species {0} -e rmblast -pa\n".format(especie))
 if emailPessoal =='null':
-	arquivo.write("{0}\n".format(emailPessoal))
+	arquivo.write("mail:{0}\n".format(emailPessoal))
 else:
-	arquivo.write("{0}|{1}|{2}\n".format(emailPessoal,emailServidor,senha))
+	arquivo.write("mail:{0}|{1}|{2}\n".format(emailPessoal,emailServidor,senha))
+arquivo.write("#{0}\n".format(remover))
 arquivo.close()
-input()
+input("Precione ENTER para finalizar")

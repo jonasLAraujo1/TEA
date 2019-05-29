@@ -42,13 +42,13 @@ if (opcao == 'n' or opcao ==  'N'):
 	numero_proc= input("Digite o Numero de Processadores que Será Usado;\n")
 	""" tenta chamar o programa REpeatMasker 
 	se estiver tudo certo ele vai fazer os demais processos
-		*nota01 parametros[0] é a primeira linha do arquivo configuracao.conf 
+		*nota01 parametros["programa"] é a primeira linha do arquivo configuracao.conf 
 		 que contem o caminho do RepeatMasker
-		 *nota02 parametros[1] é a seginda linha do arquivo configuracao.conf 
+		 *nota02 parametros["email"] é a segunda linha do arquivo configuracao.conf 
 		 que contem o Email que vai ser enviado os alertas """
 	
 	try:
-		system(parametros[0]+" "+ numero_proc+" -s "+genoma) # *nota01
+		system(parametros["programa"]+" "+ numero_proc+" -s "+genoma) # *nota01
 		if(os.path.exists('./'+genoma+".out")):
 			system("awk -v OFS='\t' '$1=$1' "+genoma+".out > "+saida+".tab") # transforma a saída em um arquivo tabular
 			system("awk '{ print $10, $11 }' "+saida+".tab > "+saida+"colunasDuplas.tab") # cria um arquivo coma as colunas 10 e 11 da saída
@@ -73,7 +73,7 @@ else:
 	"""execução padrão dos processos (quando não existe um arquivo tabular) """
 	numero_proc= input("Digite o Numero de Processadores que Será Usado;\n")
 	try:
-		system(parametros[0]+" "+ numero_proc+" -s "+genoma)
+		system(parametros["programa"]+" "+ numero_proc+" -s "+genoma)
 		if(os.path.exists('./'+genoma+".out")):
 			system("awk -v OFS='\t' '$1=$1' "+genoma+".out > "+saida+".tab") # transforma a saída em um arquivo tabular
 			system("awk '{ print $10, $11 }' "+saida+".tab > "+saida+"colunasDuplas.tab") # cria um arquivo coma as colunas 10 e 11 da saída
@@ -88,7 +88,7 @@ else:
 		estrutura=modulos.indexar_contar(saida+"colunasDuplas.tab")
 		modulos.criar_txt2(estrutura,saida)
 
-
+modulos.removeLixo(saida,parametros["residuos"])
 horario=datetime.now().strftime('%d/%m/%y   %H:%M') # Pega a hora do fim dos processos
 arquivo.write('Fim: '+horario+'\n') # escreve no arquivo de log quando terminou os processos
 arquivo.close() # fecha o arquivo de log

@@ -408,13 +408,28 @@ def carregarConfig(localExecute):
   else:
     localExecute=localExecute.replace("/main.py","/")
     arquivo_conf=(open(localExecute+"configuracao.conf"))
-  configuracoes=[]
-  for i in arquivo_conf.readlines():
-    if "|" in i:
-      for sub in i.split("|"):
-        configuracoes.append(sub.replace("\n",""))
+  configuracoes={}
+  for linha in arquivo_conf.readlines():
+    if "RepeatMasker" in linha:
+      configuracoes["programa"]=linha.replace("\n","")
+    elif "mail:" in linha:
+      configuracoes['email']=[]
+      linha.
+      for sub in linha.replace("mail:","").split("|"):
+        configuracoes['email'].append(sub.replace("\n",""))
+    elif "#" in linha:
+      configuracoes["residuos"]=bool(linha.replace("#","").replace("\n",""))
     else:
-      configuracoes.append(i.replace("\n",""))
+      pass
   return configuracoes
 
+def removeLixo(prefixo,remover):
+  from os import remove
+  if (remover):
+    listaRemover=["colunasDuplas.tab",".fna.alert",".fna.cat",".fna.masked",".fna.out"]
+    for arquvivo in listaRemover:
+      if (os.path.exists(prefixo+arquvivo)):
+        remove(prefixo+arquvivo)
+      else:
+        pass
     
