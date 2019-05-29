@@ -403,8 +403,11 @@ def carregarConfig(localExecute):
   import os
   if(os.path.exists("./configuracao_local.conf")):
     localExecute="./configuracao_local.conf"
-  localExecute=localExecute.replace("/main.py","/")
-  arquivo_conf=(open(localExecute+"configuracao.conf"))
+    arquivo_conf=(open(localExecute))
+  
+  else:
+    localExecute=localExecute.replace("/main.py","/")
+    arquivo_conf=(open(localExecute+"configuracao.conf"))
   configuracoes=[]
   for i in arquivo_conf.readlines():
     if "|" in i:
