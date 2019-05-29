@@ -399,7 +399,18 @@ def criar_txt2(dicionario,nome_arquivo='saida'):
 	arquivo.close()
 
 # ler_index()
-def config(caminho):
-    arq=open(caminho+"/configuracao.conf",'r')
-    return arq.readlines()
+def carregarConfig(localExecute):
+  if(os.path.exists("./configuracao_local.conf")):
+    localExecute="./configuracao_local.conf"
+  localExecute=localExecute.replace("/main.py","/")
+  arquivo_conf=(open(localExecute+"configuracao.conf"))
+  configuracoes=[]
+  for i in arquivo_conf.readlines():
+    if "|" in i:
+      for sub in i.split("|"):
+        configuracoes.append(sub.replace("\n",""))
+    else:
+      configuracoes.append(i.replace("\n",""))
+  return configuracoes
+
     
