@@ -414,7 +414,6 @@ def carregarConfig(localExecute):
       configuracoes["programa"]=linha.replace("\n","")
     elif "mail:" in linha:
       configuracoes['email']=[]
-      linha.
       for sub in linha.replace("mail:","").split("|"):
         configuracoes['email'].append(sub.replace("\n",""))
     elif "#" in linha:
