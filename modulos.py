@@ -400,6 +400,7 @@ def criar_txt2(dicionario,nome_arquivo='saida'):
 
 # ler_index()
 def carregarConfig(localExecute):
+  import os
   if(os.path.exists("./configuracao_local.conf")):
     localExecute="./configuracao_local.conf"
   localExecute=localExecute.replace("/main.py","/")
