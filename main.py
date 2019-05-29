@@ -21,7 +21,7 @@ arquivo.write('Inicio: '+horario+'\n') # grava a hora de inicio da Análise no l
 genoma= sys.argv[1] #pega o nome do arquivo pasado como segundo argumento
 
 caminlho=sys.argv[0]
-caminho=caminho.replace("/autoAnalise.py","/")
+caminho=caminho.replace("/main.py","/")
 config=(open(caminho+"configuracao.conf"))
 parametros=config.readlines()
 
