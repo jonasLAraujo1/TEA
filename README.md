@@ -4,6 +4,7 @@
 ## Arquivos
  * main.py
  * modulos.py
+ *gerarConfigLocal.py
  * configuracao.conf
 ## Sintaxe de Uso 
 ``` python3 [arg1]  [arg2] ```
@@ -17,4 +18,6 @@
 ## Exemplo 02
 ####  Programa em diretório diferente nesse caso deve-se passar o diretório absoluto do programa
 ``` python3 /home/TEA/main.py teste.fasta ```
+ #
+ ### Usando configurações alternativas
  
