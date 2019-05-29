@@ -215,9 +215,9 @@ def indexar_contar(arquivo):
       somaClasse+=classe1[i][j]['Total']
     classe1[i]['Total']=somaClasse
 
-  arquivo = open('referencia2.ref','wb') # o "b" significa que o arquivo é binário
-  pickle.dump(classe1,arquivo) 
-  arquivo.close()
+  #arquivo = open('referencia2.ref','wb') # o "b" significa que o arquivo é binário
+  #pickle.dump(classe1,arquivo) 
+  #arquivo.close()
   return classe1
 
 
