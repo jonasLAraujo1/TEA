@@ -417,7 +417,8 @@ def carregarConfig(localExecute):
       for sub in linha.replace("mail:","").split("|"):
         configuracoes['email'].append(sub.replace("\n",""))
     elif "#" in linha:
-      configuracoes["residuos"]=bool(linha.replace("#","").replace("\n",""))
+      configuracoes["residuos"]=linha.replace("#","").replace("\n","")
+      configuracoes["residuos"]=bool(configuracoes["residuos"])
     else:
       pass
   return configuracoes
