@@ -426,7 +426,7 @@ def carregarConfig(localExecute):
 def removeLixo(prefixo,remover):
   from os import remove
   import os
-  if (remover='True'):
+  if (remover=='True'):
     listaRemover=["colunasDuplas.tab",".fna.alert",".fna.cat",".fna.masked",".fna.out"]
     for arquvivo in listaRemover:
       if (os.path.exists(prefixo+arquvivo)):
